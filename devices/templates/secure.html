@@ -1,0 +1,6 @@
+<h2>Захищена зона</h2>
+<p>Вітаємо, {{ user.username }}! Ви успішно увійшли до системи!</p>
+
+<form action="{% url 'logout' %}" method="post">
+    {% csrf_token %} <button type="submit">Вийти з акаунта</button>
+</form>

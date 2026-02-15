@@ -1,0 +1,10 @@
+<h2>Реєстрація нового користувача</h2>
+<form method="post">
+    {% csrf_token %}
+    <p>Логін: <input type="text" name="username" required></p>
+    <p>Email: <input type="email" name="email" required></p>
+    <p>Пароль: <input type="password" name="password" required></p>
+    <p>Вже є акаунт?</p>
+    <a href="{% url 'login' %}">Увійти</a>
+    <button type="submit">Зареєструватися</button>
+</form>

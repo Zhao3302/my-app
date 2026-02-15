@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Вхід до системи</title>
+</head>
+<body>
+    <h2>Вхід до системи</h2>
+    
+    <form method="post" action="{% url 'login' %}">
+        {% csrf_token %}
+        <p>Email: <input type="email" name="email" required></p>
+        <p>Пароль: <input type="password" name="password" required></p>
+        
+        <button type="submit">Увійти</button>
+    </form>
+
+    {% if error %}
+        <p style="color: red; font-weight: bold; margin-top: 10px;">{{ error }}</p>
+    {% endif %}
+
+    <hr> <p>Ще не маєте акаунта?</p>
+    <a href="{% url 'register' %}">
+        <button type="button">Зареєструватися</button>
+    </a>
+</body>
+</html>
