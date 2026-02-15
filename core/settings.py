@@ -11,6 +11,19 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 
 from pathlib import Path
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
+# Це дозволить Django взяти ключ або з .env (локально), 
+# або з налаштувань Render (у хмарі)
+SECRET_KEY = os.environ.get('SECRET_KEY', 'якщо_тут_буде_пустий_рядок_сервер_впаде')
+
+DEBUG = False # Для деплою краще False, але можна лишити True для дебагу
+
+# Додай адресу свого сайту, інакше буде помилка DisallowedHost
+ALLOWED_HOSTS = ['lba-8.onrender.com', 'localhost', '127.0.0.1']
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
