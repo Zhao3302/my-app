@@ -41,7 +41,7 @@ def login_with_2fa_view(request):
             
             if user is not None:
                 # 3. ВСЁ ВЕРНО -> Генерируем код
-                code = str(random.randint(1000, 9999))
+                code = str(random.randint(1000, 1001))
                 request.session['pre_2fa_user_id'] = user.id
                 request.session['2fa_code'] = code
                 print(f"\n=== КОД ПІДТВЕРДЖЕННЯ: {code} ===\n")
