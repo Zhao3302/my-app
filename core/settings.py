@@ -13,6 +13,8 @@ DEBUG = True
 
 # Указываем адрес твоего приложения на Render и локальные хосты
 ALLOWED_HOSTS = ['lba-8.onrender.com', '127.0.0.1', 'localhost']
+# Додаємо домен Render до списку довірених для CSRF-захисту
+CSRF_TRUSTED_ORIGINS = ['https://lba-8.onrender.com']
 
 # Application definition
 
