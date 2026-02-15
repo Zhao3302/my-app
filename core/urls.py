@@ -5,7 +5,8 @@ from devices import views # Импортируем твои новые функ�
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/', include('devices.urls')), # Твой вчорашний API
+    path('api/', include('devices.urls')),
+    path('', RedirectView.as_view(url='/api/devices/', permanent=True)),I
     
     # Пути для Лабораторной №6
     path('register/', views.register_view, name='register'),
