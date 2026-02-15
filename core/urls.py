@@ -8,8 +8,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include('devices.urls')),
     
-    # Головна сторінка: тепер вона автоматично перенаправляє на твій API
-    path('', RedirectView.as_view(url='/api/devices/', permanent=True)),
+    path('', RedirectView.as_view(url='/login/', permanent=True)),
     
     # Шляхи для Лабораторної №6 (Автентифікація)
     path('register/', views.register_view, name='register'),
